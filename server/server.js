@@ -14,7 +14,7 @@ const app = express();
 // Middleware
 // Enhanced CORS configuration
 const corsOptions = {
-  origin: ['http://localhost:5173', 'https://taskmanager-vb8h.onrender.com'],
+  origin: ['http://localhost:5173', 'https://crm-telecallers.onrender.com'],
   methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true,
