@@ -51,7 +51,7 @@ const TelecallerPage = () => {
   useEffect(() => {
     const fetchLeads = async () => {
       try {
-        const { data } = await axios.get('http://localhost:5000/api/leads', {
+        const { data } = await axios.get('https://crm-telecaller.onrender.com/api/leads', {
           headers: { Authorization: `Bearer ${token}` }
         });
         setLeads(data);
@@ -86,7 +86,7 @@ const TelecallerPage = () => {
   const handleAddLead = async () => {
     if (!validatePhone(newLead.phone) || !validateEmail(newLead.email)) return;
     try {
-      const { data } = await axios.post('http://localhost:5000/api/leads', {
+      const { data } = await axios.post('https://crm-telecaller.onrender.com/api/leads', {
         ...newLead,
         telecaller: user.id
       }, {
