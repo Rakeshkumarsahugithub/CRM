@@ -12,8 +12,18 @@ const dashboardRoutes = require('./routes/dashboard');
 const app = express();
 
 // Middleware
-app.use(cors());
+// Enhanced CORS configuration
+const corsOptions = {
+  origin: ['http://localhost:5173', 'https://taskmanager-vb8h.onrender.com'],
+  methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true,
+  optionsSuccessStatus: 200
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
+
 
 // Database connection
 mongoose.connect(process.env.MONGODB_URI)
