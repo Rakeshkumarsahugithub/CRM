@@ -71,7 +71,7 @@ const SignupPage = () => {
     setIsLoading(true);
     try {
       const { confirmPassword, ...signupData } = formData;
-      const response = await axios.post('https://crm-telecaller.onrender.com', signupData);
+      const response = await axios.post('https://crm-telecaller.onrender.com/api/auth/signup', signupData);
       
       // Show success dialog instead of immediately logging in
       setOpenSuccessDialog(true);
