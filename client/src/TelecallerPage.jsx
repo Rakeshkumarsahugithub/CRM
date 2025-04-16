@@ -109,7 +109,7 @@ const TelecallerPage = () => {
   const handleUpdateAddress = async () => {
     try {
       const { data } = await axios.put(
-        `http://localhost:5000/api/leads/${selectedLead._id}/address`,
+        `https://crm-telecaller.onrender.com/api/leads/${selectedLead._id}/address`,
         { address: editAddress },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -137,7 +137,7 @@ const TelecallerPage = () => {
       }
 
       const { data: updatedLead } = await axios.put(
-        `http://localhost:5000/api/leads/${selectedLead._id}/status`,
+        `https://crm-telecaller.onrender.com/api/leads/${selectedLead._id}/status`,
         { 
           status, 
           response: status === 'new' ? null : response 
@@ -160,7 +160,7 @@ const TelecallerPage = () => {
 
   const handleDeleteLead = async () => {
     try {
-      await axios.delete(`http://localhost:5000/api/leads/${selectedLead._id}`, {
+      await axios.delete(`https://crm-telecaller.onrender.com/api/leads/${selectedLead._id}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setLeads(leads.filter(lead => lead._id !== selectedLead._id));
