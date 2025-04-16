@@ -47,21 +47,21 @@ const DashboardPage = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const statsRes = await axios.get('https://crm-telecaller.onrender.com', {
+        const statsRes = await axios.get('https://crm-telecaller.onrender.com/api/dashboard/stats', {
           headers: {
             Authorization: `Bearer ${token}`
           }
         });
         setStats(statsRes.data);
 
-        const trendsRes = await axios.get('https://crm-telecaller.onrender.com', {
+        const trendsRes = await axios.get('https://crm-telecaller.onrender.com/api/dashboard/trends', {
           headers: {
             Authorization: `Bearer ${token}`
           }
         });
         setTrends(trendsRes.data);
 
-        const callsRes = await axios.get('https://crm-telecaller.onrender.com', {
+        const callsRes = await axios.get('https://crm-telecaller.onrender.com/api/dashboard/calls', {
           headers: {
             Authorization: `Bearer ${token}`
           }
