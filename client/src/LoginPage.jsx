@@ -17,7 +17,7 @@ const LoginPage = () => {
     e.preventDefault();
     dispatch(loginStart());
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/login', {
+      const response = await axios.post('https://crm-telecaller.onrender.com/api/auth/login', {
         email,
         password,
       });
